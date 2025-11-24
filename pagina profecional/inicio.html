@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="body1">
+
+  <div class="card">
+    <h2>Iniciar sesión</h2>
+
+    <input id="usuario" placeholder="Usuario">
+    <input id="clave" type="password" placeholder="Contraseña">
+
+    <button onclick="logear()">Entrar</button>
+
+    <p id="mensaje"></p>
+
+    <a href="registro.html">Crear cuenta</a>
+  </div>
+
+  <script>
+    function logear() {
+      let usuario = document.getElementById("usuario").value;
+      let clave = document.getElementById("clave").value;
+
+      let guardado = JSON.parse(localStorage.getItem("usuarioRegistrado"));
+
+      if (!guardado) {
+        mensaje.textContent = "Nadie está registrado.";
+        return;
+      }
+
+      if (usuario === guardado.usuario && clave === guardado.clave) {
+        mensaje.textContent = "Entrando...";
+        localStorage.setItem("logueado", "true");
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 800);
+      } else {
+        mensaje.textContent = "Usuario o contraseña incorrecta.";
+      }
+    }
+  </script>
+
+</body>
+</html>

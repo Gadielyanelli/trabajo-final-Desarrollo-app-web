@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+    <h2>Registrarse</h2>
+
+    <input id="nombre" placeholder="Nombre completo">
+    <input id="usuario" placeholder="Usuario">
+    <input id="clave" type="password" placeholder="Contraseña">
+
+    <button onclick="registrar()">Registrarme</button>
+
+    <p id="mensaje"></p>
+
+    <a href="login.html">Ya tengo cuenta</a>
+  </div>
+
+  <script>
+    function registrar() {
+      let nombre = document.getElementById("nombre").value;
+      let usuario = document.getElementById("usuario").value;
+      let clave = document.getElementById("clave").value;
+
+      if (!nombre || !usuario || !clave) {
+        mensaje.textContent = "Completa todo pt)";
+        return;
+      }
+
+      let datos = { nombre, usuario, clave };
+      localStorage.setItem("usuarioRegistrado", JSON.stringify(datos));
+
+      mensaje.textContent = "Registrado";
+      setTimeout(() => {
+        window.location.href = "inicio.html";
+      }, 800);
+    }
+  </script>
+
+</body>
+</html>
