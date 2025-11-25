@@ -7,23 +7,20 @@
 </head>
 <body class="body1">
 
-  <div class="card">
+  <div class="seccion">
     <h2>Iniciar sesión</h2>
 
     <input id="usuario" placeholder="Usuario">
-    <input id="clave" type="password" placeholder="Contraseña">
+    <input id="contraseña" type="password" placeholder="Contraseña">
 
     <button onclick="logear()">Entrar</button>
 
-    <p id="mensaje"></p>
-
-    <a href="registro.html">Crear cuenta</a>
   </div>
 
   <script>
     function logear() {
       let usuario = document.getElementById("usuario").value;
-      let clave = document.getElementById("clave").value;
+      let contraseña = document.getElementById("clave").value;
 
       let guardado = JSON.parse(localStorage.getItem("usuarioRegistrado"));
 
@@ -32,14 +29,14 @@
         return;
       }
 
-      if (usuario === guardado.usuario && clave === guardado.clave) {
-        mensaje.textContent = "Entrando...";
+      if (usuario === guardado.usuario && contraseña === guardado.contraseña) {
+        mensaje.textContent = "Entrando pt";
         localStorage.setItem("logueado", "true");
         setTimeout(() => {
           window.location.href = "index.html";
         }, 800);
       } else {
-        mensaje.textContent = "Usuario o contraseña incorrecta.";
+        mensaje.textContent = "Usuario o contraseña incorrecta";
       }
     }
   </script>

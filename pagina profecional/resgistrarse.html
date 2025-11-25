@@ -7,27 +7,27 @@
 </head>
 <body>
 
-  <div class="card">
+  <div class="seccion">
     <h2>Registrarse</h2>
 
     <input id="nombre" placeholder="Nombre completo">
     <input id="usuario" placeholder="Usuario">
-    <input id="clave" type="password" placeholder="Contraseña">
+    <input id="contraseña" type="password" placeholder="Contraseña">
 
     <button onclick="registrar()">Registrarme</button>
 
     <p id="mensaje"></p>
 
-    <a href="login.html">Ya tengo cuenta</a>
+    <a href="login.html">Ya estas registrado puto?</a>
   </div>
 
   <script>
     function registrar() {
-      let nombre = document.getElementById("nombre").value;
-      let usuario = document.getElementById("usuario").value;
-      let clave = document.getElementById("clave").value;
+      const nombre = document.getElementById("nombre").value;
+      const usuario = document.getElementById("usuario").value;
+      const contraseña = document.getElementById("contraseña").value;
 
-      if (!nombre || !usuario || !clave) {
+      if (!nombre || !usuario || !contraseña) {
         mensaje.textContent = "Completa todo pt)";
         return;
       }
