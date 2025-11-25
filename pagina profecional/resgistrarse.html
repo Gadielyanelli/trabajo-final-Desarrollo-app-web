@@ -18,7 +18,7 @@
 
     <p id="mensaje"></p>
 
-    <a href="login.html">Ya estas registrado puto?</a>
+    <a href="inicio.html">Ya estas registrado puto?</a>
   </div>
 
   <script>
@@ -32,7 +32,7 @@
         return;
       }
 
-      let datos = { nombre, usuario, clave };
+      let datos = { nombre, usuario, contraseña };
       localStorage.setItem("usuarioRegistrado", JSON.stringify(datos));
 
       mensaje.textContent = "Registrado";

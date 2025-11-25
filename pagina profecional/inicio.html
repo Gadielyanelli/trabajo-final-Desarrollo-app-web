@@ -14,13 +14,13 @@
     <input id="contraseña" type="password" placeholder="Contraseña">
 
     <button onclick="logear()">Entrar</button>
-
+    <p id="mensaje"></p>
   </div>
 
   <script>
     function logear() {
       let usuario = document.getElementById("usuario").value;
-      let contraseña = document.getElementById("clave").value;
+      let contraseña = document.getElementById("contraseña").value;
 
       let guardado = JSON.parse(localStorage.getItem("usuarioRegistrado"));
 
